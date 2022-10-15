@@ -1,0 +1,14 @@
+# Pycharm files
+.idea/
+
+# Bot token and DB auth data
+auth_data.py
+
+# Environments
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Images
+243School.jpg
