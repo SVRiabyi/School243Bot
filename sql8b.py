@@ -91,7 +91,7 @@ def sql_workday(workday):  # Функція для запиту розкладу
 
 def current_lesson():  # Функція, що тягне з БД інформацію щодо поточного уроку
     # приєднуємося до бази даних класу
-    con = MySQLdb.connect('127.0.0.1', '8b_admin', '8B243-School', '8b_semestr1')
+    con = MySQLdb.connect(auth_data.sql_server, auth_data.sql_user, auth_data.sql_pass, auth_data.sql_dbname)
     cursor = con.cursor()
 
     # Задаємо змінні для звернення до дати або часу
@@ -117,7 +117,7 @@ def current_lesson():  # Функція, що тягне з БД інформа�
 
 def end_lesson():  # Запит для визначення часу закінчення уроку
     # приєднуємося до бази даних класу
-    con = MySQLdb.connect('127.0.0.1', '8b_admin', '8B243-School', '8b_semestr1')
+    con = MySQLdb.connect(auth_data.sql_server, auth_data.sql_user, auth_data.sql_pass, auth_data.sql_dbname)
     cursor = con.cursor()
 
     # Задаємо змінні для звернення до дати або часу
@@ -143,7 +143,7 @@ WHERE weekday = '{day[present_day]}' AND time_stop>CURRENT_TIME;'''
 
 def any_lesson(subject):  # Функція, що тягне інформацію про урок, назва якого заходить як змінна subject
     # приєднуємося до бази даних класу
-    con = MySQLdb.connect('127.0.0.1', '8b_admin', '8B243-School', '8b_semestr1')
+    con = MySQLdb.connect(auth_data.sql_server, auth_data.sql_user, auth_data.sql_pass, auth_data.sql_dbname)
     cursor = con.cursor()
 
     # Виконуємо запит до БД
@@ -162,7 +162,7 @@ def any_lesson(subject):  # Функція, що тягне інформацію
 
 def list_of_subjects():  # Функція, що тягне список уроків з БД
     # приєднуємося до бази даних класу
-    con = MySQLdb.connect('127.0.0.1', '8b_admin', '8B243-School', '8b_semestr1')
+    con = MySQLdb.connect(auth_data.sql_server, auth_data.sql_user, auth_data.sql_pass, auth_data.sql_dbname)
     cursor = con.cursor()
     # задаємо запит на список предметів
     query5 = '''SELECT subject 
