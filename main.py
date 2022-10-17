@@ -5,11 +5,12 @@ import emoji
 from sql8b import sql_present, sql_workday, list_of_subjects
 from sql8b import current_lesson, end_lesson, any_lesson
 from auth_data import token
+from pytz import timezone
 
 # Записуємо в змінні назви днів тижня, поточний день тижня та час.
 day = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
 day_ukr = ('Понеділок', 'Вівторок', 'Середу', 'Четвер', "П'ятницю", 'Суботу', 'Неділю')
-now = datetime.now()
+now = datetime.now(timezone('Europe/Kyiv'))
 present_day = datetime.weekday(now)
 present_date = datetime.date(now)
 present_time = datetime.time(now).strftime('%H:%M')
